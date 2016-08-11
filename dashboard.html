@@ -1,0 +1,25 @@
+﻿<div ng-repeat="video in videos">
+            <div flex-xs flex-gt-xs="25" id="dashboarditem">
+                <md-card>
+                    <video controls ng-click="showDetails(video._id)">
+                            <source src="{{video.url | trustUrl}}" type="video/mp4">
+                    </video>
+                    <span>
+                        <div star-rating rating-value="video.rate" max="5" ng-click="rateVideo(video._id,video.rate)" on-rating-selected="getSelectedRating(rating)"></div>
+                    </span>
+
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span><b>{{video.name | limitTo:30}}</b></span>
+                        </md-card-title-text>
+                    </md-card-title>
+                   
+                    <md-card-content>
+                        <p>
+                            {{video.description | limitTo:50}} <md-button  class="md-raised md-warn" ng-click="showDetails(video._id)">Show Details</md-button>
+                        </p>
+                    </md-card-content>
+                </md-card>
+
+            </div>
+</div>

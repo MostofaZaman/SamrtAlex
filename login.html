@@ -1,0 +1,39 @@
+﻿<form>
+    <div class="row">
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-4">
+            <h2><i class="material-icons">supervisor_account</i>User Login</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-6">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>User Name</label>
+                <input type="text" ng-model="user.name" required>
+            </md-input-container>
+
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-6">
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Password</label>
+                <input type="text" ng-model="user.password" required>
+            </md-input-container>
+        </div>
+
+    </div>
+    <div class="row" ng-controller="loginCtrl">
+        <div class="col-lg-4">
+            <md-button ng-disabled="!(!!user.name && !!user.password)" type="submit" ng-click="login(user)" class="md-raised md-warn"><md-icon><i class="material-icons">lock_open</i></md-icon>Login</md-button>
+        </div>
+    </div>
+</form>
